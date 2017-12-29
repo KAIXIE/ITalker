@@ -1,16 +1,17 @@
 package net.qiujuer.italker.push.frags;
 
 
+import android.graphics.Color;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import net.qiujuer.italker.common.app.Fragment;
 import net.qiujuer.italker.common.app.PresenterFragment;
 import net.qiujuer.italker.common.widget.recycler.RecyclerAdapter;
 import net.qiujuer.italker.factory.model.api.bank.BankItemModel;
-import net.qiujuer.italker.factory.presenter.BasePresenter;
 import net.qiujuer.italker.factory.presenter.bank.BankContract;
 import net.qiujuer.italker.factory.presenter.bank.BankPresenter;
 import net.qiujuer.italker.push.R;
@@ -85,6 +86,8 @@ public class BankcardFragment extends PresenterFragment<BankContract.Presenter> 
         TextView mBankName;
         @BindView(R.id.cardNumber)
         TextView mCardNumber;
+        @BindView(R.id.ll_background)
+        LinearLayout mLinearLayout;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -95,6 +98,17 @@ public class BankcardFragment extends PresenterFragment<BankContract.Presenter> 
             mCardType.setText(bankItemModel.getCardType());
             mBankName.setText(bankItemModel.getBankName());
             mCardNumber.setText(bankItemModel.getCardNumber());
+            String id = bankItemModel.getId();
+            int i = Integer.parseInt(id);
+            int color;
+            if ((i % 2) == 0) {
+                color =  getResources().getColor(R.color.blue_200);
+
+            } else {
+                color =  getResources().getColor(R.color.red_200);
+            }
+            mLinearLayout.setBackgroundColor(color);
+
         }
     }
 
