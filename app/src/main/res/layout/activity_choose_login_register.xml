@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash"
+    tools:context="net.qiujuer.italker.push.ChooseLoginRegisterActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="104dp">
+
+        <ImageButton
+            android:id="@+id/ib_login"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="60dp"
+            android:background="#00000000"
+            android:scaleType="centerCrop"
+            android:src="@drawable/login_icon" />
+
+        <ImageButton
+            android:id="@+id/ib_register"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:layout_gravity="end"
+            android:layout_marginLeft="60dp"
+            android:background="#00000000"
+            android:scaleType="centerCrop"
+            android:src="@drawable/register_icon" />
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+

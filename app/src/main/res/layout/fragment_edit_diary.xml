@@ -1,0 +1,24 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="net.qiujuer.italker.push.frags.diary.AddDiaryFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/len_12">
+
+        <EditText
+            android:id="@+id/et_diary_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:fontFamily="sans-serif-thin"
+            android:padding="@dimen/len_8"
+            android:textColor="#393739"
+            tools:text="@string/app_name" />
+    </android.support.design.widget.TextInputLayout>
+</FrameLayout>

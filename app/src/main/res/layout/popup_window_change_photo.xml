@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#F1F1F1"
+    android:orientation="vertical"
+    android:paddingBottom="2dp">
+
+
+    <TextView
+        android:background="@color/white"
+        android:textSize="@dimen/len_20"
+        android:gravity="center"
+        android:padding="@dimen/len_10"
+        android:id="@+id/pop_from_take_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#BDBDBD"
+        android:text="拍照"/>
+
+
+
+    <TextView
+        android:background="@color/white"
+        android:layout_marginTop="1dp"
+        android:textSize="@dimen/len_20"
+        android:gravity="center"
+        android:padding="@dimen/len_10"
+        android:textColor="#BDBDBD"
+        android:id="@+id/pop_from_photo_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="从相册中选择"/>
+
+
+    <TextView
+        android:background="@color/white"
+        android:layout_marginTop="1dp"
+        android:textSize="@dimen/len_20"
+        android:gravity="center"
+        android:padding="@dimen/len_10"
+        android:textColor="#BDBDBD"
+        android:id="@+id/save_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="保存头像图片"/>
+
+    <TextView
+        android:background="@color/white"
+        android:layout_marginTop="10dp"
+        android:textSize="@dimen/len_20"
+        android:gravity="center"
+        android:padding="@dimen/len_10"
+        android:textColor="#BDBDBD"
+        android:id="@+id/cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="取消"/>
+
+</LinearLayout>

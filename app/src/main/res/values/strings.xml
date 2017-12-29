@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">恰同学</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_launch">@string/app_name</string>
+    <string name="title_activity_user">UserActivity</string>
+    <string name="title_activity_message">MessageActivity</string>
+    <string name="title_activity_personal">PersonalActivity</string>
+    <string name="title_activity_group_create">GroupCreateActivity</string>
+    <string name="title_activity_group_member">GroupMemberActivity</string>
+    <string name="title_activity_choose_login_register">ChooseLoginRegisterActivity</string>
+    <string name="title_activity_setting">SettingActivity</string>
+    <string name="title_activity_payment_code">PaymentCodeActivity</string>
+    <string name="title_activity_bankcard">BankcardActivity</string>
+    <string name="title_activity_continuous_capture">ContinuousCaptureActivity</string>
+</resources>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/len_4"
+    android:layout_marginEnd="@dimen/len_8"
+    android:layout_marginStart="@dimen/len_8"
+    android:background="@drawable/shape_corner"
+    android:orientation="vertical"
+    android:padding="@dimen/len_8">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/len_8">
+
+        <ImageView
+            android:padding="@dimen/len_8"
+            android:id="@+id/iv_head"
+            android:layout_width="@dimen/portraitMinSize"
+            android:layout_height="@dimen/portraitMinSize"
+            app:srcCompat="@drawable/headimg"
+            tools:layout_editor_absoluteX="5dp"
+            tools:layout_editor_absoluteY="38dp" />
+
+        <TextView
+            android:id="@+id/tv_author"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/len_8"
+            android:layout_weight="1"
+            android:text="安娜"
+            android:textColor="#2D2D2D"
+            android:textSize="@dimen/len_16"
+            tools:layout_editor_absoluteX="65dp"
+            tools:layout_editor_absoluteY="69dp" />
+
+
+
+    </LinearLayout>
+
+    <com.github.mzule.ninegridlayout.NineGridLayout
+        android:id="@+id/nineGridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/len_2"
+        app:spacing="2dp">
+
+    </com.github.mzule.ninegridlayout.NineGridLayout>
+
+    <TextView
+
+        android:id="@+id/tv_introduction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/len_12"
+        android:text="这次的消息来自于Facebook，这家科技巨头计划招聘一位专职高管负责体育赛事流媒体直播权的谈判。根据商业体育杂志的John Ourand透露，Facebook已经对新高管的人选进行了一段时间的考察。"
+        android:textColor="#2D2D2D"
+        android:textSize="@dimen/len_16" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end|center_vertical"
+        android:orientation="horizontal"
+
+        android:padding="@dimen/len_8">
+
+        <ImageButton
+            android:id="@+id/ib_section_good"
+            android:layout_width="@dimen/len_16"
+            android:layout_height="@dimen/len_16"
+            android:background="@color/transparent"
+            android:scaleType="centerInside"
+            android:src="@drawable/section_good_selected" />
+
+
+        <TextView
+            android:id="@+id/tv_section_good_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/len_8"
+            android:text="350"
+            android:textColor="#FF5555"
+            android:textSize="@dimen/len_16" />
+
+        <ImageButton
+            android:id="@+id/ib_section_bad"
+            android:layout_width="@dimen/len_16"
+            android:layout_height="@dimen/len_16"
+            android:layout_marginLeft="@dimen/len_16"
+            android:background="@color/transparent"
+            android:scaleType="centerInside"
+            android:src="@drawable/section_bad_unselected" />
+
+        <TextView
+            android:id="@+id/tv_section_bad_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/len_8"
+            android:text="215"
+            android:textColor="#BFBFBF"
+            android:textSize="@dimen/len_16" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_login"
+    tools:context=".activities.PaymentCodeActivity">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/len_12"
+        android:layout_marginTop="@dimen/len_68"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="@dimen/len_4">
+
+        <ImageView
+            android:id="@+id/iv_code"
+            android:layout_width="256dp"
+            android:layout_height="256dp"
+            android:layout_gravity="center_horizontal" />
+
+        <com.journeyapps.barcodescanner.DecoratedBarcodeView
+            android:id="@+id/barcode_scanner"
+            android:layout_width="256dp"
+            android:layout_height="256dp"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone">
+
+        </com.journeyapps.barcodescanner.DecoratedBarcodeView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#F0F0F0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/len_10"
+            android:drawableRight="@drawable/right_icon"
+            android:drawableTint="#1D1D1D"
+            android:gravity="center_vertical"
+            android:scaleX="0.3"
+            android:scaleY="0.3"
+            android:text="零花钱付款"
+            android:textColor="#1D1D1D"
+            android:textSize="@dimen/len_52" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/len_24"
+        android:layout_marginTop="@dimen/len_12"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/scan"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawablePadding="@dimen/len_10"
+            android:drawableTop="@drawable/doctor_scan"
+            android:padding="@dimen/len_10"
+            android:scaleX="0.6"
+            android:scaleY="0.6"
+            android:text="扫码付"
+            android:textColor="@color/white"
+            android:textSize="@dimen/len_24" />
+
+        <TextView
+            android:id="@+id/pay"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawablePadding="@dimen/len_10"
+            android:drawableTop="@drawable/doctor_pay_code"
+            android:padding="@dimen/len_10"
+            android:scaleX="0.6"
+            android:scaleY="0.6"
+            android:text="付款码"
+            android:textColor="@color/white"
+            android:textSize="@dimen/len_24" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

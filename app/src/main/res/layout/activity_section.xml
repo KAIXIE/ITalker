@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="net.qiujuer.italker.push.frags.main.BlackFragment">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionBarWithStatusBarSize"
+        android:outlineProvider="bounds"
+        tools:targetApi="lollipop">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/statusBarSize"
+            android:paddingLeft="@dimen/len_4"
+            android:paddingRight="@dimen/len_4">
+
+            <ImageButton
+                android:id="@+id/ib_back"
+                android:layout_width="@dimen/len_40"
+                android:layout_height="@dimen/len_40"
+                android:clickable="true"
+                android:layout_marginLeft="@dimen/len_4"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/app_name"
+                android:foreground="@drawable/ic_touch_menu"
+                android:background="@null"
+                android:padding="@dimen/len_6"
+                android:scaleType="centerInside"
+                android:src="@drawable/back"
+                android:tint="?attr/toolbarMenuIconColor" />
+
+            <TextView
+                android:id="@+id/txt_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="段子"
+                android:layout_gravity="center_vertical"
+                android:textAppearance="@style/TextAppearance.Title"
+                android:layout_marginLeft="@dimen/len_48"
+                android:textSize="@dimen/font_28" />
+
+
+        </FrameLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+   <FrameLayout
+       android:id="@+id/lay_container"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="1"
+       ></FrameLayout>
+
+
+</LinearLayout>

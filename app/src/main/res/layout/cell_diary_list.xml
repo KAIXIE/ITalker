@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/shape_corner_diary"
+    app:layout_goneMarginTop="@dimen/len_2"
+    app:layout_goneMarginBottom="@dimen/len_2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/len_16"
+    android:layout_marginTop="1dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_brief"
+        android:maxLength="30"
+        android:padding="@dimen/len_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#191719"
+        android:text="学习的过程中的收获才是最大的，至于做出的东西已经不重要了好吗？就像我当年刚开始学PHP,用面向过程写了个垃圾商城，谁都不会花时间看一眼，但是没有它，我连工作都找不到" />
+
+    <TextView
+        android:id="@+id/tv_updateTime"
+        android:padding="@dimen/len_4"
+        android:textColor="#9F9D9F"
+        android:text="2017-12-11 13:55:01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
