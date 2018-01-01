@@ -75,8 +75,8 @@ public class PersonFragment extends PresenterFragment<PersonalContract.Presenter
     }
 
     @Override
-    protected void initData() {
-        super.initData();
+    public void onResume() {
+        super.onResume();
         mPresenter.start();
     }
 

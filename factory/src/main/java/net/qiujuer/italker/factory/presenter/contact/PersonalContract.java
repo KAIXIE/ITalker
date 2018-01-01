@@ -11,6 +11,8 @@ public interface PersonalContract {
     interface Presenter extends BaseContract.Presenter {
         // 获取用户信息
         User getUserPersonal();
+
+        void saveProfile(User user);
     }
 
     interface View extends BaseContract.View<Presenter> {

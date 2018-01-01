@@ -1,8 +1,6 @@
-package net.qiujuer.italker.push.activities;
+package net.qiujuer.italker.push.frags.bankcard;
 
-import android.content.Context;
-import android.content.Intent;
-import android.view.KeyEvent;
+
 import android.view.View;
 
 import com.bumptech.glide.Glide;
@@ -10,31 +8,34 @@ import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.ViewTarget;
 
-import net.qiujuer.italker.common.app.Activity;
+import net.qiujuer.italker.common.app.Application;
+import net.qiujuer.italker.common.app.Fragment;
 import net.qiujuer.italker.push.R;
-import net.qiujuer.italker.push.frags.payment.PaymentCodeFragment;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class PaymentCodeActivity extends Activity {
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class BankcardIDCodeFragment extends Fragment {
+
     @BindView(R.id.appbar)
     View mLayAppbar;
 
+    public BankcardIDCodeFragment() {
+        // Required empty public constructor
+    }
+
+
     @Override
     protected int getContentLayoutId() {
-        return R.layout.activity_payment_code;
-    }
-
-
-    public static void show(Context context) {
-        Intent intent = new Intent(context, PaymentCodeActivity.class);
-        context.startActivity(intent);
+        return R.layout.fragment_bankcard_idcode;
     }
 
     @Override
-    protected void initWidget() {
-        super.initWidget();
+    protected void initWidget(View root) {
+        super.initWidget(root);
         Glide.with(this)
                 .load(R.drawable.bg_login)
                 .centerCrop()
@@ -44,12 +45,18 @@ public class PaymentCodeActivity extends Activity {
                         this.view.setBackground(resource.getCurrent());
                     }
                 });
-        getSupportFragmentManager().beginTransaction().add(R.id.lay_container, new PaymentCodeFragment(), PaymentCodeFragment.class.getName()).addToBackStack(null).commit();
+    }
+
+    @Override
+    public boolean onBackPressed() {
+        Application.showToast("onBackPressed");
+        getActivity().getSupportFragmentManager().popBackStack();
+        return true;
     }
 
     @OnClick(R.id.ib_back)
-    void onBackClicked(View view){
-        finish();
+    void onBackClicked(View view) {
+        getActivity().getSupportFragmentManager().popBackStack();
     }
 
 }

@@ -5,7 +5,7 @@ import android.content.Intent;
 
 import net.qiujuer.italker.common.app.Activity;
 import net.qiujuer.italker.push.R;
-import net.qiujuer.italker.push.frags.BankcardFragment;
+import net.qiujuer.italker.push.frags.bankcard.BankcardFragment;
 
 public class BankcardActivity extends Activity {
 
@@ -21,8 +21,8 @@ public class BankcardActivity extends Activity {
     @Override
     protected void initWidget() {
         super.initWidget();
+
         getSupportFragmentManager().beginTransaction().add(R.id.lay_container, new BankcardFragment(), BankcardFragment.class.getName()).addToBackStack(null).commit();
     }
-
 
 }

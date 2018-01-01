@@ -24,15 +24,6 @@
             android:layout_height="256dp"
             android:layout_gravity="center_horizontal" />
 
-        <com.journeyapps.barcodescanner.DecoratedBarcodeView
-            android:id="@+id/barcode_scanner"
-            android:layout_width="256dp"
-            android:layout_height="256dp"
-            android:layout_gravity="center_horizontal"
-            android:visibility="gone">
-
-        </com.journeyapps.barcodescanner.DecoratedBarcodeView>
-
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"

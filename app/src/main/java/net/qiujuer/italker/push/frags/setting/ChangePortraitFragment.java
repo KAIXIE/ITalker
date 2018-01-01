@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import net.qiujuer.italker.common.app.Application;
 import net.qiujuer.italker.common.app.Fragment;
@@ -70,6 +71,11 @@ public class ChangePortraitFragment extends PresenterFragment<UpdateInfoContract
         mUser = (User) bundle.getSerializable(USER_KEY);
     }
 
+    @Override
+    protected void initData() {
+        super.initData();
+        Glide.with(getContext()).load(mUser.getPortrait()).asBitmap().diskCacheStrategy(DiskCacheStrategy.ALL).into(mImageView);
+    }
 
     @Override
     protected int getContentLayoutId() {
@@ -168,9 +174,10 @@ public class ChangePortraitFragment extends PresenterFragment<UpdateInfoContract
                 break;
         }
     }
+
     public File getBitmapFile(Intent data) {
         Uri selectedImage = data.getData();
-        Cursor cursor = getContext().getContentResolver().query(selectedImage, new String[] { android.provider.MediaStore.Images.ImageColumns.DATA }, null, null, null);
+        Cursor cursor = getContext().getContentResolver().query(selectedImage, new String[]{android.provider.MediaStore.Images.ImageColumns.DATA}, null, null, null);
         cursor.moveToFirst();
 
         int idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);

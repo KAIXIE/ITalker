@@ -6,4 +6,6 @@
     <item name="tag_recycler_holder" type="id" />
     <!--默认头像的drawable名字-->
     <item name="default_portrait" type="drawable" />
+    <item name="dialog_bankcard_tip" type="layout" />
+    <item name="btn_dialog" type="id" />
 </resources>

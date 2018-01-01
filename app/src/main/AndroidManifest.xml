@@ -99,31 +99,40 @@
             android:theme="@style/AppTheme.TransStatusBar" />
         <activity
             android:name=".ChooseLoginRegisterActivity"
-            android:label="@string/title_activity_choose_login_register" />
+            android:label="@string/title_activity_choose_login_register"
+            android:theme="@style/AppTheme.TransStatusBar" />
         <activity
             android:name=".activities.SettingActivity"
-            android:label="@string/title_activity_setting" />
+            android:label="@string/title_activity_setting"
+            android:theme="@style/AppTheme.TransStatusBar" />
         <activity
             android:name=".activities.BlackDetailActivity"
-            android:label="@string/title_activity_setting" />
+            android:label="@string/title_activity_setting"
+            android:theme="@style/AppTheme.TransStatusBar" />
         <activity
             android:name=".activities.SectionActivity"
-            android:label="@string/title_activity_setting" />
+            android:label="@string/title_activity_setting"
+            android:theme="@style/AppTheme.TransStatusBar" />
         <activity
             android:name=".activities.DiaryActivity"
-            android:label="@string/title_activity_setting" />
+            android:label="@string/title_activity_setting"
+            android:theme="@style/AppTheme.TransStatusBar" />
         <activity
             android:name=".activities.PocketMoneyActivity"
-            android:label="@string/title_activity_setting" />
+            android:label="@string/title_activity_setting"
+            android:theme="@style/AppTheme.TransStatusBar" />
         <activity
             android:name=".activities.PaymentCodeActivity"
-            android:label="@string/title_activity_payment_code" />
+            android:label="@string/title_activity_payment_code"
+            android:theme="@style/AppTheme.TransStatusBar" />
         <activity
             android:name=".activities.BankcardActivity"
-            android:label="@string/title_activity_bankcard" />
+            android:label="@string/title_activity_bankcard"
+            android:theme="@style/AppTheme.TransStatusBar" />
         <activity
             android:name=".activities.ContinuousCaptureActivity"
-            android:label="@string/title_activity_bankcard" />
+            android:label="@string/title_activity_bankcard"
+            android:theme="@style/AppTheme.TransStatusBar" />
     </application>
 
 </manifest>

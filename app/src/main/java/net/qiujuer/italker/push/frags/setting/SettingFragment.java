@@ -4,6 +4,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.ViewTarget;
@@ -67,8 +68,8 @@ public class SettingFragment extends PresenterFragment<PersonalContract.Presente
     }
 
     @Override
-    protected void initData() {
-        super.initData();
+    public void onResume() {
+        super.onResume();
         mPresenter.start();
     }
 

@@ -12,6 +12,11 @@ public interface UpdateInfoContract {
     interface Presenter extends BaseContract.Presenter {
         // 更新
         void update(String photoFilePath, String desc, boolean isMan);
+
+        void updateName(String name);
+
+
+        void updateMotto(String motto);
     }
 
     interface View extends BaseContract.View<Presenter> {

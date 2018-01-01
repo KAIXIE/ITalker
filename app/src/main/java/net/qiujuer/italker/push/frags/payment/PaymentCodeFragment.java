@@ -24,6 +24,7 @@ import com.journeyapps.barcodescanner.DecoratedBarcodeView;
 
 import net.qiujuer.italker.common.app.Fragment;
 import net.qiujuer.italker.push.R;
+import net.qiujuer.italker.push.activities.ContinuousCaptureActivity;
 
 import java.util.HashMap;
 import java.util.List;
@@ -36,24 +37,11 @@ import butterknife.OnClick;
  * A simple {@link Fragment} subclass.
  */
 public class PaymentCodeFragment extends Fragment {
-    private static final String TAG = PaymentCodeFragment.class.getSimpleName();
-    private BeepManager beepManager;
-    private String lastText;
-    private String toast;
-
-    private void displayToast() {
-        if (getActivity() != null && toast != null) {
-            Toast.makeText(getActivity(), toast, Toast.LENGTH_LONG).show();
-            toast = null;
-        }
-    }
 
     @Override
     protected void initWidget(View root) {
         super.initWidget(root);
-        barcodeView.decodeContinuous(callback);
-        beepManager = new BeepManager(getActivity());
-        changeToPay();
+        onPayClick();
     }
 
     public PaymentCodeFragment() {
@@ -63,56 +51,15 @@ public class PaymentCodeFragment extends Fragment {
     @BindView(R.id.iv_code)
     ImageView mCode;
 
-    @BindView(R.id.barcode_scanner)
-    DecoratedBarcodeView barcodeView;
-
     @OnClick(R.id.scan)
     void onScanClick(View view) {
-        changeToScan();
-
+        ContinuousCaptureActivity.show(getContext());
     }
 
-    void changeToPay() {
-        mCode.setVisibility(View.VISIBLE);
-        barcodeView.setVisibility(View.GONE);
-        onPayClick();
-        barcodeView.pause();
-    }
-
-    void changeToScan() {
-        mCode.setVisibility(View.GONE);
-        barcodeView.setVisibility(View.VISIBLE);
-        barcodeView.resume();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        barcodeView.pause();
-    }
-
-    private BarcodeCallback callback = new BarcodeCallback() {
-        @Override
-        public void barcodeResult(BarcodeResult result) {
-            if (result.getText() == null || result.getText().equals(lastText)) {
-                // Prevent duplicate scans
-                return;
-            }
-
-            lastText = result.getText();
-            barcodeView.setStatusText(result.getText());
-            beepManager.playBeepSoundAndVibrate();
-
-        }
-
-        @Override
-        public void possibleResultPoints(List<ResultPoint> resultPoints) {
-        }
-    };
 
     @OnClick(R.id.pay)
     void onPayClick(View view) {
-        changeToPay();
+        onPayClick();
     }
 
     void onPayClick() {
@@ -128,10 +75,6 @@ public class PaymentCodeFragment extends Fragment {
         return R.layout.fragment_payment_code;
     }
 
-
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        return barcodeView.onKeyDown(keyCode, event);
-    }
 
     private Bitmap generateBitmap(String content, int width, int height) {
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
@@ -174,21 +117,5 @@ public class PaymentCodeFragment extends Fragment {
         canvas.drawBitmap(logoBitmap, (qrBitmapWidth - logoBitmapWidth) / 2, (qrBitmapHeight - logoBitmapHeight) / 2, null);
         canvas.restore();
         return blankBitmap;
-    }
-
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-        if (result != null) {
-            if (result.getContents() == null) {
-                toast = "Cancelled from fragment";
-            } else {
-                toast = "Scanned from fragment: " + result.getContents();
-            }
-
-            // At this point we may or may not have a reference to the activity
-            displayToast();
-        }
     }
 }

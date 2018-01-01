@@ -85,7 +85,7 @@
 
 
         <LinearLayout
-            android:id="@+id/ll_nickname"
+            android:id="@+id/change_nickname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
@@ -128,7 +128,7 @@
 
 
         <LinearLayout
-            android:id="@+id/ll_motto"
+            android:id="@+id/change_motto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"

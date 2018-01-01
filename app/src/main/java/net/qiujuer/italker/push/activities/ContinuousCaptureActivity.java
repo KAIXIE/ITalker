@@ -21,6 +21,7 @@ import net.qiujuer.italker.push.R;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * Created by Administrator on 2017/12/28.
@@ -110,5 +111,10 @@ public class ContinuousCaptureActivity extends Activity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         return barcodeView.onKeyDown(keyCode, event) || super.onKeyDown(keyCode, event);
+    }
+
+    @OnClick(R.id.ib_back)
+    void onBackClicked(View view) {
+        finish();
     }
 }

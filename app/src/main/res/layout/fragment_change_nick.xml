@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="net.qiujuer.italker.push.frags.bankcard.BankcardFragment">
+    tools:context="net.qiujuer.italker.push.frags.setting.SettingFragment">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
@@ -20,20 +22,6 @@
             android:paddingLeft="@dimen/len_4"
             android:paddingRight="@dimen/len_4">
 
-            <ImageButton
-                android:id="@+id/ib_back"
-                android:layout_width="@dimen/len_40"
-                android:layout_height="@dimen/len_40"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="@dimen/len_4"
-                android:background="@null"
-                android:clickable="true"
-                android:contentDescription="@string/app_name"
-                android:foreground="@drawable/ic_touch_menu"
-                android:padding="@dimen/len_6"
-                android:scaleType="centerInside"
-                android:src="@drawable/back"
-                android:tint="?attr/toolbarMenuIconColor" />
 
             <TextView
                 android:id="@+id/tv_title"
@@ -43,30 +31,32 @@
                 android:layout_marginLeft="@dimen/len_4"
                 android:layout_weight="1"
                 android:padding="@dimen/len_6"
-                android:text="银行卡"
+                android:text="修改昵称"
                 android:textAppearance="@style/TextAppearance.Title"
                 android:textSize="@dimen/font_28" />
 
-            <ImageButton
-                android:id="@+id/add_bankcard"
+            <Button
+                android:id="@+id/btn_confirm"
+                android:textSize="@dimen/len_24"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/transparent"
-                android:padding="@dimen/len_2"
-                android:scaleType="centerInside"
-                android:scaleX="0.7"
-                android:scaleY="0.7"
-                android:src="@drawable/doctor_add_bankcard" />
-
+                android:background="@null"
+                android:text="确定" />
 
         </LinearLayout>
 
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white" />
-</LinearLayout>
 
+    <EditText
+        android:textColor="@color/black"
+        android:id="@+id/et_nick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入要修改的昵称"
+        android:padding="@dimen/len_16"
+        android:textColorHint="@color/grey_700"
+        android:textSize="@dimen/len_24" />
+
+
+</LinearLayout>

@@ -54,6 +54,34 @@ public class UpdateInfoPresenter extends BasePresenter<UpdateInfoContract.View>
     }
 
     @Override
+    public void updateName(String name) {
+        start();
+
+        final UpdateInfoContract.View view = getView();
+        if (TextUtils.isEmpty(name)) {
+            view.showError(R.string.data_nick_update_invalid_parameter);
+        } else {
+            UserUpdateModel model = new UserUpdateModel(name, "", "", 0);
+            UserHelper.update(model, UpdateInfoPresenter.this);
+        }
+
+
+    }
+
+    @Override
+    public void updateMotto(String motto) {
+        start();
+
+        final UpdateInfoContract.View view = getView();
+        if (TextUtils.isEmpty(motto)) {
+            view.showError(R.string.data_motto_update_invalid_parameter);
+        } else {
+            UserUpdateModel model = new UserUpdateModel("", "", motto, 0);
+            UserHelper.update(model, UpdateInfoPresenter.this);
+        }
+    }
+
+    @Override
     public void onDataLoaded(UserCard userCard) {
         final UpdateInfoContract.View view = getView();
         if (view == null)

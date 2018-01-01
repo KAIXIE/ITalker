@@ -6,6 +6,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.ViewTarget;
@@ -47,6 +48,21 @@ public class EditProfileFragment extends PresenterFragment<PersonalContract.Pres
         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.lay_container, ChangePortraitFragment.newInstance(mUser), ChangePortraitFragment.class.getName()).addToBackStack(null).commit();
     }
 
+    @OnClick(R.id.change_nickname)
+    void onChangeNicknameClick(View view) {
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.lay_container, ChangeNickFragment.newInstance(mUser), ChangeNickFragment.class.getName()).addToBackStack(null).commit();
+    }
+
+    @OnClick(R.id.change_motto)
+    void onChangeMottoClick(View view) {
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.lay_container, ChangeMottoFragment.newInstance(mUser), ChangeMottoFragment.class.getName()).addToBackStack(null).commit();
+    }
+
+    @OnClick(R.id.save_profile)
+    void onSaveProfileClick(View view) {
+            mPresenter.saveProfile(mUser);
+    }
+
     public EditProfileFragment() {
     }
 
@@ -61,17 +77,28 @@ public class EditProfileFragment extends PresenterFragment<PersonalContract.Pres
         Glide.with(this)
                 .load(R.drawable.bg_login)
                 .centerCrop()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(new ViewTarget<View, GlideDrawable>(mLayAppbar) {
                     @Override
                     public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> glideAnimation) {
                         this.view.setBackground(resource.getCurrent());
                     }
                 });
+        mSex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (R.id.radio_man == checkedId){
+                    mUser.setSex(1);
+                } else if (R.id.radio_woman == checkedId){
+                    mUser.setSex(2);
+                }
+            }
+        });
     }
 
     @Override
-    protected void initData() {
-        super.initData();
+    public void onResume() {
+        super.onResume();
         mPresenter.start();
     }
 
@@ -86,7 +113,7 @@ public class EditProfileFragment extends PresenterFragment<PersonalContract.Pres
         mPortraitView.setup(Glide.with(this), user);
         mName.setText(user.getName());
         mDesc.setText(user.getDesc());
-        boolean isMan = user.getSex() == 0 ? true : false;
+        boolean isMan = user.getSex() == 2 ? false : true;
         mSex.check(isMan ? R.id.radio_man : R.id.radio_woman);
     }
 

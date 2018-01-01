@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_corner"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="@dimen/len_8">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/len_8"
+        android:text="持卡人说明"
+        android:textColor="@color/black"
+        android:textSize="@dimen/len_20" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/len_8"
+        android:text="为保护账户资金安全，只能绑定认证用户本人的银行卡"
+        android:textColor="@color/grey_500"
+        android:textSize="@dimen/len_20" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey_200" />
+
+    <Button
+        android:id="@+id/btn_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:text="知道了"
+        android:textColor="@color/blue_500"
+        android:textSize="@dimen/len_20" />
+</LinearLayout>

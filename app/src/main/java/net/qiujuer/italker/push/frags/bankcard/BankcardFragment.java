@@ -1,12 +1,16 @@
-package net.qiujuer.italker.push.frags;
+package net.qiujuer.italker.push.frags.bankcard;
 
 
-import android.graphics.Color;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.ViewTarget;
 
 import net.qiujuer.italker.common.app.Fragment;
 import net.qiujuer.italker.common.app.PresenterFragment;
@@ -19,16 +23,23 @@ import net.qiujuer.italker.push.R;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class BankcardFragment extends PresenterFragment<BankContract.Presenter> implements BankContract.View {
-
+    @BindView(R.id.appbar)
+    View mLayAppbar;
     private Adapter mAdapter = new Adapter();
 
     @BindView(R.id.rv)
     RecyclerView mRecyclerView;
+
+    @OnClick(R.id.add_bankcard)
+    void onAddBankcardClick(View view) {
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.lay_container, new BankcardProfileFragment(), BankcardProfileFragment.class.getName()).addToBackStack(null).commit();
+    }
 
 
     public BankcardFragment() {
@@ -44,6 +55,15 @@ public class BankcardFragment extends PresenterFragment<BankContract.Presenter> 
     @Override
     protected void initWidget(View root) {
         super.initWidget(root);
+        Glide.with(this)
+                .load(R.drawable.bg_login)
+                .centerCrop()
+                .into(new ViewTarget<View, GlideDrawable>(mLayAppbar) {
+                    @Override
+                    public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> glideAnimation) {
+                        this.view.setBackground(resource.getCurrent());
+                    }
+                });
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         mRecyclerView.setAdapter(mAdapter);
     }
@@ -102,14 +122,18 @@ public class BankcardFragment extends PresenterFragment<BankContract.Presenter> 
             int i = Integer.parseInt(id);
             int color;
             if ((i % 2) == 0) {
-                color =  getResources().getColor(R.color.blue_200);
+                color = getResources().getColor(R.color.blue_200);
 
             } else {
-                color =  getResources().getColor(R.color.red_200);
+                color = getResources().getColor(R.color.red_200);
             }
             mLinearLayout.setBackgroundColor(color);
 
         }
     }
 
+    @OnClick(R.id.ib_back)
+    public void onBackClick(View view) {
+        getActivity().finish();
+    }
 }
